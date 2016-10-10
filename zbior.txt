@@ -1,0 +1,38 @@
+Na podstawie kontenera bitset zdefiniowac szablon klasy Zbior
+do reprezentowania zbiorow liczbowych o elementach z przedzialu <0,N-1>
+(N-parametr szablonu, domyslnie 32)
+
+Wymagane operacje (jedynie implementacja operacji << moze zawierac petle)
+
+1) konstruktory i destruktory
+- konstruktor z pararamatrem typu int 
+     - tworzy zbior jednoelementowy (dla argumentu z przedzialu <0,N-1>, dla innych zbior pusty )
+- konstruktor z parametrem typu char*
+     - dzialanie analogiczne do podobnego konstruktora bitsetu
+       np. dla argumentu "1001011" tworzy zbior {0,1,3,6} 
+- inne konstruktory i destruktory
+     - wylacznie jesli sa niezbedne (aby klasa zbior byla "porzıdnı" klasa,
+       obiekty porzadnej klasy mozna np. przekazywac jako parametry),
+       nie definiowac "na zapas"
+
+2)
+- operatory  + , - , *                          - operacje mnogosciowe (suma, roznica, iloczyn zbiorow)
+- operatory  += i -= (z parametrem typu int)    - wstaw/usun element
+- operator   =                                  - zdefiniowac lub uzasadnic ze nie jest potrzebny
+                                                  (nie definiowac "na zapas")
+
+3)
+- operatory <= i >=     - zawieranie zbiorow
+- operator ~            - dopelnienie zbioru
+- metoda empty()        - zwraca true jesli zbior jest pusty
+- metoda count()        - zwraca moc (liczbe elementow) zbioru
+
+4) wypisywanie
+- operator <<           - wypisywanie zbioru ma ostream w postaci { 0, 1, 2, 3, 9, 10, 20 }
+                          (dla zbioru pustego wypisujemy { } )
+5)
+- polecenia z main ( wyjasnienie i sprawdzenie zawierania)
+
+Uwaga: Jedynie operatory += i -= zmieniaja swoj argument (lewy),
+       dla pozostalych operatorow argumenty nie moga sie zmienic !
+Za kazdy z etapow 1-5 mozna uzyskac 1 punkt.
